@@ -350,6 +350,10 @@ public final class Environment
 
         if (!container.isHealthy()) {
             log.warn("Container %s is not healthy", container.getLogicalName());
+            log.warn("current health logs: %s", container.getCurrentContainerInfo().getState().getHealth().getLog());
+            log.warn("health logs: %s", container.getContainerInfo().getState().getHealth().getLog());
+            log.warn("current health logs: %s", container.getCurrentContainerInfo());
+            log.warn("health logs: %s", container.getContainerInfo());
             return false;
         }
 
